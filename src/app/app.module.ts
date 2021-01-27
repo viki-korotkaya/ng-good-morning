@@ -7,6 +7,8 @@ import { AboutComponent } from './about/about.component';
 import { ShopBuilderComponent } from './shop-builder/shop-builder.component';
 import { OrdersComponent } from './orders/orders.component';
 import { AuthComponent } from './auth/auth.component';
+import { BuildControlComponent } from './shop-builder/build-control/build-control.component';
+import { OrderSummaryComponent } from './shop-builder/order-summary/order-summary.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { AuthComponent } from './auth/auth.component';
     AboutComponent,
     ShopBuilderComponent,
     OrdersComponent,
-    AuthComponent
+    AuthComponent,
+    BuildControlComponent,
+    OrderSummaryComponent
   ],
   imports: [
     BrowserModule
