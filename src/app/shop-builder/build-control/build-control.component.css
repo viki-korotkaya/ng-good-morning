@@ -20,7 +20,6 @@
 }
 
 @media (min-width: 650px) {
-  .buildControls,
   .buildControlsButton
    {
     flex-flow: row;
