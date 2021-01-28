@@ -1,14 +1,16 @@
 <div class="buildControls">
-  <div class="buildControl" *ngFor="let control of controls">
-    <div class="label">{{ control.label }}<br/>{{ control.cost }}</div>
-    <button
-      class="less"
-      (click)="onRemove()"
-    >- 1
-    </button>
-    <button
-      class="more"
-      (click)="onAdd()">+ 1
-    </button>
+  <div class="buildControlsButton">
+    <div class="buildControl" *ngFor="let control of controls">
+      <div class="label">{{ control.label }}<br/>{{ control.cost }}</div>
+      <button
+        class="less"
+        (click)="onRemove()"
+      >- 1
+      </button>
+      <button
+        class="more"
+        (click)="onAdd()">+ 1
+      </button>
+    </div>
   </div>
 </div>
