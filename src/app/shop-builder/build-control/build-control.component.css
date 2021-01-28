@@ -1,0 +1,145 @@
+.buildControls {
+  width: 100%;
+  background-color: #9f9f9f;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  box-shadow: 0 2px 1px #ccc;
+  margin: 10px auto;
+  padding-bottom: 10px;
+}
+
+
+.buildControls p {
+  color: white;
+}
+
+.buildControlsButtons {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+
+@media (min-width: 650px) {
+  .buildControls, .buildControlsButtons {
+    flex-flow: row;
+  }
+}
+
+
+.orderButton {
+  margin-top: 30px;
+  background-color: #c63b44;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #a28ba2;
+  color: #887896;
+  font-family: inherit;
+  font-size: 1.2em;
+  padding: 15px 30px;
+  box-shadow: 2px 2px 2px #928896;
+  font-weight: bold;
+  color: white;
+}
+
+.orderButton:hover, .orderButton:active {
+  background-color: #a2252c;
+  border: 1px solid #967593;
+  color: white;
+
+
+}
+
+.orderButton:disabled {
+  background-color: #C7C6C6;
+  cursor: not-allowed;
+  border: 1px solid #ccc;
+  color: #888888;
+}
+
+.orderButton:not(:disabled) {
+  animation: enable 0.3s linear;
+}
+
+@keyframes enable {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.buildControl {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 5px 0;
+}
+
+.buildControl button {
+  display: block;
+  font: inherit;
+  padding: 5px;
+  margin: 0 5px;
+  width: 40px;
+  /*height: 49px;*/
+  border: 1px solid #aa817d;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+
+.buildControl button:disabled {
+  background-color: rgba(217, 204, 199, 0.68);
+  border: 1px solid #7E7365;
+  color: #9f9f9f;
+  cursor: default;
+}
+
+.buildControl button:hover:disabled {
+  background-color: rgba(217, 204, 199, 0.68);
+  color: #9f9f9f;
+  cursor: not-allowed;
+}
+
+.label {
+  padding: 10px;
+  font-weight: bold;
+  width: 100px;
+}
+
+.buildControl .less {
+  background-color: #d3adaf;
+  color: white;
+}
+
+.buildControl .more {
+  background-color: #d49396;
+  color: white;
+}
+
+.buildControl .less:hover, .buildControl .less:active {
+  background-color: #DF8489;
+  color: white;
+}
+
+.buildControl .more:hover,.buildControl .more:active {
+  background-color: #cd4d53;
+  color: white;
+}
+
+@media (min-width: 650px) {
+  .label {
+    flex: 0 1 100%;
+  }
+
+  .buildControl button {
+    border-radius: 20px;
+    width: 34px;
+  }
+}
