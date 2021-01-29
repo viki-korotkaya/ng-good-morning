@@ -1,20 +1,20 @@
 <div class="buildControls">
   <div class="buildControlsButton">
     <div class="buildControl" *ngFor="let control of controls">
-      <div class="label">{{ control.label }}<br/>{{ control.cost }}</div>
+      <div class="label">{{ control.label }}<br/>${{ control.cost }}</div>
       <button
         class="less"
-        (click)="onRemove()"
+        (click)="onRemove(control.type)"
       >- 1
       </button>
       <button
         class="more"
-        (click)="onAdd()">+ 1
+        (click)="onAdd(control.type)">+ 1
       </button>
     </div>
   </div>
   <button
     class="orderButton"
     >ORDER NOW</button>
-  <p style="fontSize: '1.5rem'">Current Price: <strong></strong></p>
+  <p style="fontSize: '1.5rem'">Current Price: <strong>${{ price }}</strong></p>
 </div>
