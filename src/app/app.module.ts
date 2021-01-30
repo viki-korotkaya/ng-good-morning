@@ -9,6 +9,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { AuthComponent } from './auth/auth.component';
 import { BuildControlComponent } from './shop-builder/build-control/build-control.component';
 import { OrderSummaryComponent } from './shop-builder/order-summary/order-summary.component';
+import { ControlItemComponent } from './shop-builder/build-control/control-item/control-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { OrderSummaryComponent } from './shop-builder/order-summary/order-summar
     OrdersComponent,
     AuthComponent,
     BuildControlComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    ControlItemComponent
   ],
   imports: [
     BrowserModule

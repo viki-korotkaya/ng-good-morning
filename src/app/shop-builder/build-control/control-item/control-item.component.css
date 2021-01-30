@@ -1,0 +1,70 @@
+.buildControl {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 5px 0;
+}
+
+.buildControl button {
+  display: block;
+  font: inherit;
+  padding: 5px;
+  margin: 0 5px;
+  width: 40px;
+  /*height: 49px;*/
+  border: 1px solid #aa817d;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+
+.buildControl button:disabled {
+  background-color: rgba(217, 204, 199, 0.68);
+  border: 1px solid #7E7365;
+  color: #9f9f9f;
+  cursor: default;
+}
+
+.buildControl button:hover:disabled {
+  background-color: rgba(217, 204, 199, 0.68);
+  color: #9f9f9f;
+  cursor: not-allowed;
+}
+
+.label {
+  padding: 10px;
+  font-weight: bold;
+  width: 100px;
+}
+
+.buildControl .less {
+  background-color: #d3adaf;
+  color: white;
+}
+
+.buildControl .more {
+  background-color: #d49396;
+  color: white;
+}
+
+.buildControl .less:hover, .buildControl .less:active {
+  background-color: #DF8489;
+  color: white;
+}
+
+.buildControl .more:hover,.buildControl .more:active {
+  background-color: #cd4d53;
+  color: white;
+}
+
+@media (min-width: 650px) {
+  .label {
+    flex: 0 1 100%;
+  }
+
+  .buildControl button {
+    border-radius: 20px;
+    width: 34px;
+  }
+}

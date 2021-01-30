@@ -1,2 +1,8 @@
-<app-build-control></app-build-control>
-<app-order-summary></app-order-summary>
+<app-build-control
+  (addedControl)="addedControlItem = $event"
+></app-build-control>
+<app-order-summary *ngIf="addedControlItem; else infoText"></app-order-summary>
+<ng-template #infoText>
+  <p>Please start creating your order!</p>
+</ng-template>
+

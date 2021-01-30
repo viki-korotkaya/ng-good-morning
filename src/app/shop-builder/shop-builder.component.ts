@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Control} from './control.model';
 
 @Component({
   selector: 'app-shop-builder',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shop-builder.component.css']
 })
 export class ShopBuilderComponent implements OnInit {
-
+  addedControlItem: Control;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  onAddInCart(item){
+
+  }
 }

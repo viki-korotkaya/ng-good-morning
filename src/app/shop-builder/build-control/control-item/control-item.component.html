@@ -1,0 +1,14 @@
+<div class="buildControl">
+  <div class="label">{{ controlItem.label }}<br/>${{ controlItem.cost }}</div>
+  <button
+    class="less"
+    (click)="onRemove(controlItem)"
+  >- 1
+  </button>
+  <button
+    class="more"
+    (click)="onAdd(controlItem)"
+  >+1
+  </button>
+</div>
+

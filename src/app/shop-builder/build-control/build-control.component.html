@@ -1,17 +1,11 @@
 <div class="buildControls">
   <div class="buildControlsButton">
-    <div class="buildControl" *ngFor="let control of controls">
-      <div class="label">{{ control.label }}<br/>${{ control.cost }}</div>
-      <button
-        class="less"
-        (click)="onRemove(control.type)"
-      >- 1
-      </button>
-      <button
-        class="more"
-        (click)="onAdd(control.type)">+ 1
-      </button>
-    </div>
+    <app-control-item
+      *ngFor="let control of controls"
+      [controlItem]="control"
+      (addedItem)="onAddControl(control)"
+      (removedItem)="onRemoveControl(control)"
+    ></app-control-item>
   </div>
   <button
     class="orderButton"

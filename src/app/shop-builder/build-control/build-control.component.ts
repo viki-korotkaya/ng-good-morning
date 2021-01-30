@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+
+import {Control} from '../control.model';
 
 @Component({
   selector: 'app-build-control',
@@ -6,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./build-control.component.css']
 })
 export class BuildControlComponent implements OnInit {
-  controls: { label: string, type: string, cost: number }[] = [
-    { label: 'Espresso', type: 'espresso', cost: 2.5 },
-    { label: 'Americano', type: 'americano', cost: 2.0 },
-    { label: 'Cappuccino', type: 'cappuccino', cost: 3.5 },
-    { label: 'Latte', type: 'latte', cost: 3.2 },
-    { label: 'Big Joe', type: 'bigjoe', cost: 5.0 },
-    { label: 'Hot chocolate', type: 'hotchoc', cost: 4.5 },
+  @Output() addedControl = new EventEmitter<Control>();
+  @Output() removedControl = new EventEmitter<Control>();
+  controls: Control[] = [
+    new Control('Espresso', 'espresso', 2.5),
+    new Control('Americano', 'americano', 2.0),
+    new Control('Cappuccino', 'cappuccino', 3.5),
+    new Control('Latte', 'latte', 3.2),
+    new Control('Big Joe', 'bigjoe', 5.0),
+    new Control('Hot chocolate', 'hotchoc', 4.5)
   ];
   purchase: {}[] = [];
   price: number = 0;
@@ -21,17 +25,19 @@ export class BuildControlComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onAdd(type: string){
-    this.purchase[type] ? this.purchase[type] += 1 : this.purchase[type] = 1;
-    let currentControl = this.controls.filter(el => el.type === type);
+  onAddControl(item: Control){
+    this.purchase[item.type] ? this.purchase[item.type] += 1 : this.purchase[item.type] = 1;
+    let currentControl = this.controls.filter(el => el.type === item.type);
     this.price = + (this.price + currentControl[0].cost).toFixed(2);
+    this.addedControl.emit(item);
   }
 
-  onRemove(type: string){
-    if (this.purchase[type] > 0){
-      this.purchase[type] -= 1;
-      let currentControl = this.controls.filter(el => el.type === type);
+  onRemoveControl(item: Control){
+    if (this.purchase[item.type] > 0){
+      this.purchase[item.type] -= 1;
+      let currentControl = this.controls.filter(el => el.type === item.type);
       this.price = + (this.price - currentControl[0].cost).toFixed(2);
+      this.removedControl.emit(item);
     }
   }
 }
