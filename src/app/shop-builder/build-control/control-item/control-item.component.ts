@@ -8,20 +8,20 @@ import {Control} from '../../control.model';
 })
 export class ControlItemComponent implements OnInit {
   @Input() controlItem: Control;
-  @Output() addedItem = new EventEmitter<Control>();
-  @Output() removedItem = new EventEmitter<Control>();
+  @Output() addedItem = new EventEmitter<void>();
+  @Output() removedItem = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onAdd(item){
-    this.addedItem.emit(item);
+  onAdd(){
+    this.addedItem.emit();
   }
 
-  onRemove(item){
-    this.removedItem.emit(item);
+  onRemove(){
+    this.removedItem.emit();
   }
 
 }

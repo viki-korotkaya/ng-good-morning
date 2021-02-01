@@ -1,8 +1,13 @@
 <app-build-control
-  (addedControl)="addedControlItem = $event"
+  (changedControl)="cart = $event"
 ></app-build-control>
-<app-order-summary *ngIf="addedControlItem; else infoText"></app-order-summary>
+<app-order-summary
+  *ngIf="cart; else infoText"
+  [cartItems]="cart"
+></app-order-summary>
 <ng-template #infoText>
   <p>Please start creating your order!</p>
 </ng-template>
+
+
 

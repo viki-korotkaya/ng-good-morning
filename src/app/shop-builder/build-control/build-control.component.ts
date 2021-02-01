@@ -8,8 +8,8 @@ import {Control} from '../control.model';
   styleUrls: ['./build-control.component.css']
 })
 export class BuildControlComponent implements OnInit {
-  @Output() addedControl = new EventEmitter<Control>();
-  @Output() removedControl = new EventEmitter<Control>();
+  @Output() changedControl = new EventEmitter<any>();
+
   controls: Control[] = [
     new Control('Espresso', 'espresso', 2.5),
     new Control('Americano', 'americano', 2.0),
@@ -18,7 +18,7 @@ export class BuildControlComponent implements OnInit {
     new Control('Big Joe', 'bigjoe', 5.0),
     new Control('Hot chocolate', 'hotchoc', 4.5)
   ];
-  purchase: {}[] = [];
+  purchase: any = [];
   price: number = 0;
   constructor() { }
 
@@ -26,18 +26,28 @@ export class BuildControlComponent implements OnInit {
   }
 
   onAddControl(item: Control){
-    this.purchase[item.type] ? this.purchase[item.type] += 1 : this.purchase[item.type] = 1;
+    let index = this.purchase.findIndex(el => el.type === item.type);
+    if (index >= 0){
+      this.purchase[index].value += 1;
+    } else {
+      this.purchase.push({type: item.type, value: 1}) ;
+    }
+
     let currentControl = this.controls.filter(el => el.type === item.type);
     this.price = + (this.price + currentControl[0].cost).toFixed(2);
-    this.addedControl.emit(item);
+    this.changedControl.emit(this.purchase);
   }
 
   onRemoveControl(item: Control){
-    if (this.purchase[item.type] > 0){
-      this.purchase[item.type] -= 1;
+    let index = this.purchase.findIndex(el => el.type === item.type);
+    if (index >= 0){
+      this.purchase[index].value -= 1;
+      if (this.purchase[index].value === 0){
+        this.purchase.splice([index], 1);
+      }
       let currentControl = this.controls.filter(el => el.type === item.type);
       this.price = + (this.price - currentControl[0].cost).toFixed(2);
-      this.removedControl.emit(item);
+      this.changedControl.emit(this.purchase);
     }
   }
 }

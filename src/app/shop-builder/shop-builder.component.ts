@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Control} from './control.model';
 
 @Component({
@@ -7,14 +7,11 @@ import {Control} from './control.model';
   styleUrls: ['./shop-builder.component.css']
 })
 export class ShopBuilderComponent implements OnInit {
-  addedControlItem: Control;
+  cart: any;
   constructor() { }
 
   ngOnInit(): void {
   }
 
 
-  onAddInCart(item){
-
-  }
 }
