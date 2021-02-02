@@ -1,32 +1,33 @@
-
-<div *ngFor="let item of  cartItems" [ngSwitch]="item.type">
+<p>In your Shopping Cart:</p>
+<div
+  *ngFor="let item of  cartItems"
+  [ngSwitch]="item.type"
+  class="shopping"
+>
   <div *ngSwitchCase="'espresso'"
        class="item">
     <p>Espresso, 3 fl oz - <span class="qty">qty: {{item.value}}</span></p>
   </div>
+  <div *ngSwitchCase="'americano'"
+       class="item">
+    <p>Americano, 8 fl oz - <span class="qty">qty: {{item.value}}</span></p>
+  </div>
+  <div *ngSwitchCase="'cappuccino'"
+       class="item">
+    <p>Cappuccino, 16 fl oz - <span class="qty">qty: {{item.value}}</span></p>
+  </div>
+  <div *ngSwitchCase="'latte'"
+       class="item">
+    <p>Espresso, 16 fl oz - <span class="qty">qty: {{item.value}}</span></p>
+  </div>
+  <div *ngSwitchCase="'bigjoe'"
+       class="item">
+    <p>Big Joe, 20 fl oz - <span class="qty">qty: {{item.value}}</span></p>
+  </div>
+  <div *ngSwitchCase="'hotchoc'"
+       class="item">
+    <p>Hot chocolate, 8 fl oz - <span class="qty">qty: {{item.value}}</span></p>
+  </div>
 </div>
-<!--// switch ( this.props.type ) {-->
-<!--//   case ( 'espresso' ):-->
-<!--//     item = <div className={classes.Item}><p>Espresso, 3 fl oz - <span className={classes.qty}>qty: {this.props.qty}</span></p></div>;-->
-<!--//     break;-->
-<!--//   case ( 'americano' ):-->
-<!--//     item = <div className={classes.Item}><p>Americano, 8 fl oz - <span className={classes.qty}>qty: {this.props.qty}</span></p></div>;-->
-<!--//     break;-->
-<!--//   case ( 'cappuccino' ):-->
-<!--//     item = <div className={classes.Item}><p>Cappuccino, 16 fl oz - <span className={classes.qty}>qty: {this.props.qty}</span></p></div>;-->
-<!--//     break;-->
-<!--//   case ( 'latte' ):-->
-<!--//     item = <div className={classes.Item}><p>Latte, 16 fl oz - <span className={classes.qty}>qty: {this.props.qty}</span></p></div>;-->
-<!--//     break;-->
-<!--//   case ( 'bigjoe' ):-->
-<!--//     item = <div className={classes.Item}><p>Big Joe, 20 fl oz - <span className={classes.qty}>qty: {this.props.qty}</span></p></div>;-->
-<!--//     break;-->
-<!--//   case ( 'hotchoc' ):-->
-<!--//     item = <div className={classes.Item}><p>Hot chocolate, 8 fl oz - <span className={classes.qty}>qty: {this.props.qty}</span></p></div>;-->
-<!--//     break;-->
-<!--//   default:-->
-<!--//     item = null;-->
-<!--// }-->
-<!--//-->
-<!--// return item;-->
+
 

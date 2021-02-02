@@ -7,7 +7,7 @@ import {Control} from './control.model';
   styleUrls: ['./shop-builder.component.css']
 })
 export class ShopBuilderComponent implements OnInit {
-  cart: any;
+  cart: [];
   constructor() { }
 
   ngOnInit(): void {

@@ -2,7 +2,7 @@
   (changedControl)="cart = $event"
 ></app-build-control>
 <app-order-summary
-  *ngIf="cart; else infoText"
+  *ngIf="cart?.length > 0; else infoText"
   [cartItems]="cart"
 ></app-order-summary>
 <ng-template #infoText>
