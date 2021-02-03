@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  loadedTab = 'shop-builder';
+
+  onNavigate(item: string): void{
+    this.loadedTab = item;
+  }
 
 }

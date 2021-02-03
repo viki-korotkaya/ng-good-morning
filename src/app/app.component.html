@@ -1,3 +1,5 @@
-<app-header></app-header>
-<app-shop-builder></app-shop-builder>
-
+<app-header (tabSelected)="onNavigate($event)"></app-header>
+<app-shop-builder *ngIf="loadedTab === 'shop-builder'"></app-shop-builder>
+<app-about *ngIf="loadedTab === 'about'"></app-about>
+<app-orders *ngIf="loadedTab === 'orders'"></app-orders>
+<app-auth *ngIf="loadedTab === 'auth'"></app-auth>

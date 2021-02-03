@@ -4,10 +4,10 @@
   </div>
   <nav class="desktopOnly">
     <ul class="navigationItems">
-      <li class="navigationItem"><a href="#">About</a></li>
-      <li class="navigationItem"><a href="#">ShopBuilder</a></li>
-      <li class="navigationItem"><a href="#">Orders</a></li>
-      <li class="navigationItem"><a href="#">Authenticate</a></li>
+      <li class="navigationItem" (click)="onSelect('about')"><a href="#">About</a></li>
+      <li class="navigationItem" (click)="onSelect('shop-builder')"><a href="#">ShopBuilder</a></li>
+      <li class="navigationItem" (click)="onSelect('orders')"><a href="#">Orders</a></li>
+      <li class="navigationItem" (click)="onSelect('auth')"><a href="#">Authenticate</a></li>
     </ul>
   </nav>
 </div>
