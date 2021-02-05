@@ -10,6 +10,7 @@ import { AuthComponent } from './auth/auth.component';
 import { BuildControlComponent } from './shop-builder/build-control/build-control.component';
 import { OrderSummaryComponent } from './shop-builder/order-summary/order-summary.component';
 import { ControlItemComponent } from './shop-builder/build-control/control-item/control-item.component';
+import { SliderComponent } from './about/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ControlItemComponent } from './shop-builder/build-control/control-item/
     AuthComponent,
     BuildControlComponent,
     OrderSummaryComponent,
-    ControlItemComponent
+    ControlItemComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule
